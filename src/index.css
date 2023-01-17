@@ -24,3 +24,9 @@
 html, body {
   font-family: 'Roboto', sans-serif;
 }
+
+.dsf-main {
+  background-color: var(--dsf-color-bg-secondary);
+  height: 100vh;
+  padding: 20px
+}

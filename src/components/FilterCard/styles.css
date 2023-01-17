@@ -1,0 +1,42 @@
+.dsf-filter-card-container {
+    height: 200px;
+    background-color: var(--dsf-color-bg-terciary);
+    max-width: 960px;
+    margin: 0 auto;
+    border-radius: 5px;
+    padding: 20px;
+}
+
+.dsf-filter-card-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.dsf-filter-card-form input {
+    width: 100%;
+    max-width: 200px;
+    height: 40px;
+    border-radius: 5px;
+}
+
+.dsf-filter-card-form input[type="text"] {
+    outline: none;
+    border: 1px solid var(--dsf-color-border-primary);
+}
+
+.dsf-filter-card-form input[type="text"]::placeholder {
+    color: var(--dsf-color-font-placeholder);
+    padding: 0 10px;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.dsf-filter-card-form input[type="submit"] {
+    background-color: var(--dsf-color-bg-primary);
+    color: var(--dsf-color-font-primary);
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 700;
+}
