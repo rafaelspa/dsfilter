@@ -23,11 +23,11 @@
 .dsf-filter-card-form input[type="text"] {
     outline: none;
     border: 1px solid var(--dsf-color-border-primary);
+    padding: 0 10px;
 }
 
 .dsf-filter-card-form input[type="text"]::placeholder {
     color: var(--dsf-color-font-placeholder);
-    padding: 0 10px;
     font-size: 16px;
     font-weight: 400;
 }
@@ -39,4 +39,5 @@
     border-radius: 5px;
     font-size: 16px;
     font-weight: 700;
+    cursor: pointer;
 }
