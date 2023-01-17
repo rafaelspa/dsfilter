@@ -1,0 +1,20 @@
+.dsf-listing-card-container {
+    border: 1px solid var(--dsf-color-border-secondary);
+    border-radius: 5px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.dsf-listing-card-item-title {
+    font-size: 12px;
+    font-weight: 400px;
+    color: var(--dsf-color-font-secondary);
+}
+
+.dsf-listing-card-item-price {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--dsf-color-font-terciary);
+}

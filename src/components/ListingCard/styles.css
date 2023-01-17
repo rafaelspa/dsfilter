@@ -1,0 +1,10 @@
+.dsf-listing-card-section {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: var(--dsf-color-bg-terciary);
+    width: 100%;
+    max-width: 960px;
+    margin: 10px auto 0;
+    padding: 20px;
+}
