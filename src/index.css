@@ -28,5 +28,6 @@ html, body {
 .dsf-main {
   background-color: var(--dsf-color-bg-secondary);
   height: 100vh;
-  padding: 20px
+  padding: 20px;
+  overflow: auto;
 }

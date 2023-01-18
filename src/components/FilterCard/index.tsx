@@ -1,12 +1,57 @@
-import './styles.css';
+import { useState } from "react";
+import { findByPrice } from "../../services/product-service";
+import "./styles.css";
 
-export default function FilterCard() {
+type FormData = {
+  minPrice?: number;
+  maxPrice?: number;
+};
+
+type Props = {
+  filterProducts: Function;
+};
+
+export default function FilterCard({ filterProducts }: Props) {
+  const [formData, setFormData] = useState<FormData>({});
+
+  function handleInputChange(event: any) {
+    let name = event.target.name;
+    let value = event.target.value;
+
+    setFormData({ ...formData, [name]: value });
+  }
+
+  function handleSubmit(event: any) {
+    event.preventDefault();
+    let products = findByPrice(
+      formData.minPrice || 0,
+      formData.maxPrice || Number.MAX_VALUE
+    );
+    filterProducts(products);
+    return
+    }
+  
+
   return (
     <section className="dsf-filter-card-container">
-      <form className="dsf-filter-card-form">
-        <input name="minimumPrice" type="text" placeholder="Preço mínimo" />
-        <input name="maximumPrice" type="text" placeholder="Preço máximo" />
-        <input name="filter" type="submit"  />
+      <form className="dsf-filter-card-form" onSubmit={handleSubmit}>
+        <input
+          name="minPrice"
+          value={formData?.minPrice || ""}
+          type="text"
+          placeholder="Preço mínimo"
+          onChange={handleInputChange}
+        />
+        <input
+          name="maxPrice"
+          value={formData?.maxPrice || ""}
+          type="text"
+          placeholder="Preço máximo"
+          onChange={handleInputChange}
+        />
+        <button name="filter" type="submit">
+          Filtrar
+        </button>
       </form>
     </section>
   );

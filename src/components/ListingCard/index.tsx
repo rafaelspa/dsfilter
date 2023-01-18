@@ -1,16 +1,22 @@
-import './styles.css';
-import ListingCardItem from '../ListingCardItem';
+import "./styles.css";
+import ListingCardItem from "../ListingCardItem";
+import { ProductDTO } from "../../models/product";
 
-export default function ListingCard() {
+type Props = {
+  products: ProductDTO[];
+};
 
-    return (
-        <section className="dsf-listing-card-section">
-            <ListingCardItem/>
-            <ListingCardItem/>
-            <ListingCardItem/>
-            <ListingCardItem/>
-            <ListingCardItem/>
-            <ListingCardItem/>
-        </section>
-    )
+export default function ListingCard({ products }: Props) {
+  
+  return (
+    <>
+    {products.length !== 0 && (
+      <section className="dsf-listing-card-section">
+        {products.map((product) => (
+            <ListingCardItem key={product.id} productItem={product} />
+          ))}
+      </section>
+    )}
+    </>
+  );
 }
