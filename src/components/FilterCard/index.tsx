@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { findByPrice } from "../../services/product-service";
+import { ContextProductCount } from "../../utils/context-product";
 import "./styles.css";
 
 type FormData = {
@@ -13,6 +14,7 @@ type Props = {
 
 export default function FilterCard({ filterProducts }: Props) {
   const [formData, setFormData] = useState<FormData>({});
+  const { setContextProductCount } = useContext(ContextProductCount);
 
   function handleInputChange(event: any) {
     let name = event.target.name;
@@ -27,10 +29,10 @@ export default function FilterCard({ filterProducts }: Props) {
       formData.minPrice || 0,
       formData.maxPrice || Number.MAX_VALUE
     );
+    setContextProductCount(products.length);
     filterProducts(products);
-    return
-    }
-  
+    return;
+  }
 
   return (
     <section className="dsf-filter-card-container">
